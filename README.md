@@ -12,7 +12,8 @@
 
 
 ```bash
-mkdir PegaTrouxa && cd PegaTrouxa
+git clone https://github.com/rafaelcorvino1/PegaTrouxa.git
+cd PegaTrouxa
 npm init -y
 npm install express cors body-parser axios
 ```
