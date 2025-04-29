@@ -3,3 +3,16 @@
 ![ngrok](https://github.com/user-attachments/assets/109ea21d-9be5-4ce3-b62a-559a32309efa)
 ![pix](https://github.com/user-attachments/assets/c18e67ac-6556-4eaa-abb9-087f97722dda)
 ![telegram](https://github.com/user-attachments/assets/ac26eccf-ca68-4dab-b809-caa76850a435)
+
+
+```bash
+mkdir PegaTrouxa && cd PegaTrouxa
+npm init -y
+npm install express cors body-parser axios
+```
+```bash
+node server.js
+```
+```bash
+ngrok http 8088
+```
