@@ -17,6 +17,8 @@ cd PegaTrouxa
 npm init -y
 npm install express cors body-parser axios
 ```
+![token](https://github.com/user-attachments/assets/4087e9e7-1cee-47ae-8489-14f0ff66f984)
+
 ```bash
 node server.js
 ```
