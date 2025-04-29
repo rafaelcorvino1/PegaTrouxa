@@ -1,8 +1,14 @@
 # PegaTrouxa
-![node](https://github.com/user-attachments/assets/5c9238e5-8ea6-44f9-99c9-0f8888082885)
-![ngrok](https://github.com/user-attachments/assets/109ea21d-9be5-4ce3-b62a-559a32309efa)
-![pix](https://github.com/user-attachments/assets/c18e67ac-6556-4eaa-abb9-087f97722dda)
-![telegram](https://github.com/user-attachments/assets/ac26eccf-ca68-4dab-b809-caa76850a435)
+
+1-![node](https://github.com/user-attachments/assets/5c9238e5-8ea6-44f9-99c9-0f8888082885)
+
+2-![ngrok](https://github.com/user-attachments/assets/109ea21d-9be5-4ce3-b62a-559a32309efa)
+
+3-![pix](https://github.com/user-attachments/assets/9375ab8c-a2dd-491e-b320-17588fcddf86)
+
+4-![telegram](https://github.com/user-attachments/assets/0505e4fa-341b-4d19-99b5-b9baff842357)
+
+
 
 
 ```bash
